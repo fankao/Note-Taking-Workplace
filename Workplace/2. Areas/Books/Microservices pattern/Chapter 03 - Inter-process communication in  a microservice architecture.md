@@ -459,3 +459,40 @@ The publish/async responses interaction style is a higher-level style of interac
 > - LinkedIn Databus (https://github.com/linkedin/databus)—An open source project that mines the Oracle transaction log and publishes the changes as events. LinkedIn uses Databus to synchronize various derived data stores with the system of record
 > - DynamoDB streams (http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html)—DynamoDB streams contain the time-ordered sequence of changes (creates, updates, and deletes) made to the items in a DynamoDB table in the last 24 hours. An application can read those changes from the stream and, for example, publish them as events.
 > - Eventuate Tram (https://github.com/eventuate-tram/eventuate-tram-core)—Your author’s very own open source transaction messaging library that uses MySQL binlog protocol, Postgres WAL, or polling to read changes made to an OUTBOX table and publish them to Apache Kafka.
+
+
+## 3.4. Using asynchronous messaging to improve availability
+---
+### 3.4.1 Synchronous communication reduces availability
+---
+> [!fail]
+> The problem with REST, though, is that it’s a synchronous protocol: an HTTP client must wait for the service to send a response. Whenever services communicate using a synchronous protocol, the availability of the application is reduced
+
+![[Pasted image 20240908201617.png]]
+
+### 3.4.2 Eliminating synchronous interaction
+---
+#### USE ASYNCHRONOUS INTERACTION STYLES
+---
+![[Pasted image 20240908201736.png]]
+
+#### REPLICATE DATA
+---
+![[Pasted image 20240908201845.png]]
+
+#### FINISH PROCESSING AFTER RETURNING A RESPONSE
+---
+>[!tip] Another way to eliminate synchronous communication during request processing is for a service to handle a request as follows:
+>1. Validate the request using only the data available locally
+>2. Update its database, including inserting messages into the OUTBOX table
+>3. Return a response to its client
+
+![[Pasted image 20240908202106.png]]
+
+## Summary
+---
+- The microservice architecture is a distributed architecture, so inter-process communication plays a key role.
+- It’s essential to carefully manage the evolution of a service’s API. Backward compatible changes are the easiest to make because they don’t impact clients. If you make a breaking change to a service’s API, it will typically need to support both the old and new versions until its clients have been upgraded.
+- There are numerous IPC technologies, each with different trade-offs. One key design decision is to choose either a synchronous remote procedure invocation pattern or the asynchronous Messaging pattern. Synchronous remote procedure invocation-based protocols, such as REST, are the easiest to use. But services should ideally communicate using asynchronous messaging in order to increase availability.
+- In order to prevent failures from cascading through a system, a service client that uses a synchronous protocol must be designed to handle partial failures, which are when the invoked service is either down or exhibiting high latency. In particular, it must use timeouts when making requests, limit the number of outstanding requests, and use the Circuit breaker pattern to avoid making calls to a failing service.
+- An architecture that uses synchronous protocols must include a service discovery mechanism in order for clients to determine the network location of a service instance. The simplest approach is to use the service discovery mechanism implemented by the deployment platform: the Server-side discovery and 3rd party registration patterns. But an alternative approach is to implement service discovery at the application level: the Client-side discovery and Self registration
