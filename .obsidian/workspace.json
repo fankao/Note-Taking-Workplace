@@ -11,11 +11,9 @@
             "id": "ceaf37f9a3522c7b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Workplace/2. Areas/Books/Microservices pattern/Chapter 03 - Inter-process communication in  a microservice architecture.md",
-                "mode": "source",
-                "source": false
+                "file": "Workplace/2. Areas/Books/Microservices pattern/assets/chapter03/Pasted image 20240908201617.png"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Workplace/2. Areas/Books/Microservices pattern/Chapter 03 - Inter-process communication in  a microservice architecture.md",
+                "file": "Workplace/2. Areas/Books/Microservices pattern/assets/chapter03/Pasted image 20240908201617.png",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Workplace/2. Areas/Books/Microservices pattern/Chapter 03 - Inter-process communication in  a microservice architecture.md",
+                "file": "Workplace/2. Areas/Books/Microservices pattern/assets/chapter03/Pasted image 20240908201617.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Workplace/2. Areas/Books/Microservices pattern/Chapter 03 - Inter-process communication in  a microservice architecture.md"
+                "file": "Workplace/2. Areas/Books/Microservices pattern/assets/chapter03/Pasted image 20240908201617.png"
               }
             }
           },
@@ -158,14 +156,14 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "9fee360192028aae",
+  "active": "c95ecca84eb33973",
   "lastOpenFiles": [
-    "Pasted image 20240908202106.png",
-    "Pasted image 20240908201845.png",
-    "Pasted image 20240908201736.png",
-    "Pasted image 20240908201617.png",
+    "Workplace/2. Areas/Books/Microservices pattern/Chapter 03 - Inter-process communication in  a microservice architecture.md",
+    "Workplace/2. Areas/Books/Microservices pattern/assets/chapter03/Pasted image 20240908202106.png",
+    "Workplace/2. Areas/Books/Microservices pattern/assets/chapter03/Pasted image 20240908201845.png",
+    "Workplace/2. Areas/Books/Microservices pattern/assets/chapter03/Pasted image 20240908201736.png",
+    "Workplace/2. Areas/Books/Microservices pattern/assets/chapter03/Pasted image 20240908201617.png",
     "Workplace/2. Areas/Books/Microservices pattern/Chapter 02 - Decomposition strategies.md",
-    "Workplace/3. Resouces/Github/Credentials.md",
-    "Workplace/2. Areas/Books/Microservices pattern/Chapter 03 - Inter-process communication in  a microservice architecture.md"
+    "Workplace/3. Resouces/Github/Credentials.md"
   ]
 }
